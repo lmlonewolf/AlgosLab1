@@ -1,6 +1,7 @@
-# AlgosLab1
+# Лабораторная работа 1
 
-## Скорость выполнения функции
+--- 
+# Скорость выполнения функции
 ```cpp
 template <typename F, typename... T>
 unsigned get_time(F func, T... args) {
@@ -12,9 +13,10 @@ unsigned get_time(F func, T... args) {
 }
 ```
 
+---
 
-## Случайные значения
-### 1. Случайное число в диапазоне
+# Случайные значения
+## 1. Случайное число в диапазоне
 ```cpp
 int randint(int min, int max) {
     int res = rand() % max;
@@ -22,7 +24,7 @@ int randint(int min, int max) {
 }
 ```
 
-### 2. Случайный массим со значениями из диапозона
+## 2. Случайный массим со значениями из диапозона
 ```cpp
 int* randarray(unsigned size, int min, int max) {
     int* arr = new int[size];
@@ -33,7 +35,7 @@ int* randarray(unsigned size, int min, int max) {
 ```
 
 
-### 3. Массив по диапозону
+## 3. Массив по диапозону
 ```cpp
 int* range(int min, int max) {
     int* arr = new int[max - min + 1];
@@ -43,7 +45,7 @@ int* range(int min, int max) {
 }
 ```
 
-### 4. Случайный сортированный массив
+## 4. Случайный сортированный массив
 ```cpp
 int* sorted_randarray(unsigned size, int min, int max) {
     int* arr = new int[size];
@@ -53,3 +55,198 @@ int* sorted_randarray(unsigned size, int min, int max) {
     return arr;
 }
 ```
+
+---
+
+# Задачи
+
+## 1.  Проверка наличия элемента в массиве
+```cpp
+bool find_in_array(int* arr, unsigned size, int n) {
+    bool flag = false;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == n)
+            flag =  true;
+    }
+    return flag;
+}
+```
+### Тесты
+<table>
+    <tr>
+        <th>Номер теста</th>
+        <th>Размер массива</th>
+        <th>Время выполнения в секундах</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1.000</td>
+        <td>0,000002</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>10.000</td>
+        <td>0,000022</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>100.000</td>
+        <td>0,000220</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>1.000.000</td>
+        <td>0,002300</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>10.000.000</td>
+        <td>0,023322</td>
+    </tr>
+</table>
+
+## 2. Поиск второго максимального элемента
+```cpp
+std::tuple<int, int> max_in_array(int* arr, unsigned size) {
+    int max1 = arr[0];
+    int max2 = NULL;
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max1)
+            max2 = max1, max1 = arr[i];
+        else if (arr[i] > max2)
+            max2 = arr[i];
+    }
+    return std::make_tuple(max1, max2);
+}
+```
+### Тесты
+<table>
+    <tr>
+        <th>Номер теста</th>
+        <th>Размер массива</th>
+        <th>Время выполнения в секундах</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1.000</td>
+        <td>0,000003</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>10.000</td>
+        <td>0,000025</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>100.000</td>
+        <td>0,000263</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>1.000.000</td>
+        <td>0,002528</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>10.000.000</td>
+        <td>0,025180</td>
+    </tr>
+</table>
+
+## 3. Бинарный поиск
+```cpp
+int binary_search(int* arr, unsigned size, int n) {
+    int l = 0, r = size - 1, mid;
+    while (l <= r) {
+        mid = l + (r - l) / 2;
+        if (arr[mid] == n)
+            return mid;
+        if (arr[mid] < n)
+            l = mid + 1;
+        else
+            r = mid - 1;
+    }
+    return -1;
+}
+```
+### Тесты
+<table>
+    <tr>
+        <th>Номер теста</th>
+        <th>Размер массива</th>
+        <th>Время выполнения в секундах</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1.000</td>
+        <td>0,000000</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>10.000</td>
+        <td>0,000000</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>100.000</td>
+        <td>0,000000</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>1.000.000</td>
+        <td>0,000000</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>10.000.000</td>
+        <td>0,000001</td>
+    </tr>
+</table>
+
+## 4. Построение таблицы умножения
+```cpp
+int** math_matrix(unsigned size) {
+    int** arr = new int* [size];
+    for (int i = 0; i < size; i++) {
+        arr[i] = new int[size];
+        for (int j = 0; j < size; j++)
+            arr[i][j] = (i + 1) * (j + 1);
+    }
+    return arr;
+}
+```
+
+### Тесты
+<table>
+    <tr>
+        <th>Номер теста</th>
+        <th>Размер массива</th>
+        <th>Время выполнения в секундах</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>1.000</td>
+        <td>0,000001</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>10.000</td>
+        <td>0,000006</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>100.000</td>
+        <td>0,000068</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>1.000.000</td>
+        <td>0,005061</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>10.000.000</td>
+        <td>0,503860</td>
+    </tr>
+</table>
+
