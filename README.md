@@ -105,6 +105,8 @@ bool find_in_array(int* arr, unsigned size, int n) {
     </tr>
 </table>
 
+---
+
 ## 2. Поиск второго максимального элемента
 ```cpp
 std::tuple<int, int> max_in_array(int* arr, unsigned size) {
@@ -152,6 +154,8 @@ std::tuple<int, int> max_in_array(int* arr, unsigned size) {
         <td>0,025180</td>
     </tr>
 </table>
+
+---
 
 ## 3. Бинарный поиск
 ```cpp
@@ -203,6 +207,8 @@ int binary_search(int* arr, unsigned size, int n) {
     </tr>
 </table>
 
+---
+
 ## 4. Построение таблицы умножения
 ```cpp
 int** math_matrix(unsigned size) {
@@ -225,27 +231,27 @@ int** math_matrix(unsigned size) {
     </tr>
     <tr>
         <td>1</td>
-        <td>1.000</td>
+        <td>5</td>
         <td>0,000001</td>
     </tr>
     <tr>
         <td>2</td>
-        <td>10.000</td>
+        <td>10</td>
         <td>0,000006</td>
     </tr>
     <tr>
         <td>3</td>
-        <td>100.000</td>
+        <td>100</td>
         <td>0,000068</td>
     </tr>
     <tr>
         <td>4</td>
-        <td>1.000.000</td>
+        <td>1.000</td>
         <td>0,005061</td>
     </tr>
     <tr>
         <td>5</td>
-        <td>10.000.000</td>
+        <td>10.000</td>
         <td>0,503860</td>
     </tr>
 </table>
