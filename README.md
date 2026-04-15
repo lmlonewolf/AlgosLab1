@@ -1,7 +1,7 @@
 # AlgosLab1
 
 ## Скорость выполнения функции
-```c++
+```cpp
 template <typename F, typename... T>
 unsigned get_time(F func, T... args) {
     auto start = std::chrono::steady_clock::now();
