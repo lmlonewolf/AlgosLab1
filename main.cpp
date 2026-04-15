@@ -3,7 +3,6 @@
 #include <chrono>
 #include <random>
 #include <tuple>
-#include <windows.h>
 
 // функция замера времени выполнения
 template <typename F, typename... T>
