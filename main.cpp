@@ -178,6 +178,7 @@ int main() {
         std::cout << "Time: " << get_time(math_matrix, size[i]) << " microseconds" << std::endl;
         for (int j = 0; j < size[i]; j++)
             delete[] arr[j];
+        delete[] arr
     }
     return 0;
 }
