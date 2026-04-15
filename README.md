@@ -16,7 +16,7 @@ unsigned get_time(F func, T... args) {
 ---
 
 # Случайные значения
-## 1. Случайное число в диапазоне
+- ## Случайное число в диапазоне
 ```cpp
 int randint(int min, int max) {
     int res = rand() % max;
@@ -24,7 +24,7 @@ int randint(int min, int max) {
 }
 ```
 
-## 2. Случайный массим со значениями из диапозона
+- ## Случайный массим со значениями из диапозона
 ```cpp
 int* randarray(unsigned size, int min, int max) {
     int* arr = new int[size];
@@ -35,7 +35,7 @@ int* randarray(unsigned size, int min, int max) {
 ```
 
 
-## 3. Массив по диапозону
+- ## Массив по диапозону
 ```cpp
 int* range(int min, int max) {
     int* arr = new int[max - min + 1];
@@ -45,7 +45,7 @@ int* range(int min, int max) {
 }
 ```
 
-## 4. Случайный сортированный массив
+- ## Случайный сортированный массив
 ```cpp
 int* sorted_randarray(unsigned size, int min, int max) {
     int* arr = new int[size];
