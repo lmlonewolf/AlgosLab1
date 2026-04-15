@@ -1,7 +1,7 @@
 # AlgosLab1
 
 ## Скорость выполнения функции
-\``` cpp
+\```cpp
 template <typename F, typename... T>
 unsigned get_time(F func, T... args) {
     auto start = std::chrono::steady_clock::now();
@@ -15,7 +15,7 @@ unsigned get_time(F func, T... args) {
 
 ## Случайные значения
 ## 1. Случайное число в диапазоне
-\``` cpp
+\```cpp
 int randint(int min, int max) {
     int res = rand() % max;
     return min + rand() % (max - min + 1);
@@ -23,7 +23,7 @@ int randint(int min, int max) {
 \```
 
 ## 2. Случайный массим со значениями из диапозона
-\``` cpp
+\```cpp
 int* randarray(unsigned size, int min, int max) {
     int* arr = new int[size];
     for (int i = 0; i < size; i++)
@@ -34,7 +34,7 @@ int* randarray(unsigned size, int min, int max) {
 
 
 ## 3. Массив по диапозону
-\```
+\```cpp
 int* range(int min, int max) {
     int* arr = new int[max - min + 1];
     for (int i = min; i < max + 1; i++)
@@ -44,7 +44,7 @@ int* range(int min, int max) {
 \```
 
 ## 4. Случайный сортированный массив
-\```
+\```cpp
 int* sorted_randarray(unsigned size, int min, int max) {
     int* arr = new int[size];
     arr[0] = randint(min, max);
