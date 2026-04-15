@@ -56,7 +56,7 @@ int** math_matrix(unsigned size) {
 
 
 
-/*int fun() {
+int fun() {
     srand(time(0));
 
     //  Поиск
@@ -123,4 +123,4 @@ int** math_matrix(unsigned size) {
         delete[] arr;
     }
     return 0;
-}*/
+}
